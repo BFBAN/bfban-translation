@@ -38,7 +38,7 @@
                 </a-select>
                 <a-icon type="swap-right" />
                 <a-select v-model="choose" style="width: 150px">
-                  <a-select-option value="zh-CN" v-for="(lang, lang_index) in otherLang" :key="lang_index">
+                  <a-select-option :value="lang" v-for="(lang, lang_index) in otherLang" :key="lang_index">
                     {{ lang }}
                   </a-select-option>
                 </a-select>
