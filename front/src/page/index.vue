@@ -45,7 +45,7 @@
               </a-col>
               <a-col>
                 <div class="switch">
-                  only show need to translator <a-switch v-model="onlyTranslator" />
+                  show only the fields that need to be translated <a-switch v-model="onlyTranslator" />
                 </div>
               </a-col>
             </a-row>
