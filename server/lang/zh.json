@@ -2,8 +2,8 @@
   "basic": {
     "action": {
       "suspect": {
-        "text": "可疑",
-        "describe": "从提交的证明中，不足以确定作弊行为，但以上证据存在可疑地方，如果有足够证明材料可更改石锤"
+        "text": "待自证",
+        "describe": "玩家生涯数据异常或单局数据与生涯严重不符，存在开挂嫌疑，鉴挂组成员要求该玩家自证或玩家提交了自证申述以后给予自证时间。从状态开始日期到7天后如果没有自证成功将会自动转到实锤"
       },
       "innocent": {
         "text": "MOSS自证",
@@ -28,13 +28,17 @@
       "more": {
         "text": "需要更多证据",
         "describe": "需要补充更多有力的证据"
+      },
+      "farm": {
+        "text": "刷枪",
+        "describe": "刷枪"
       }
     },
     "status": {
       "all": "全部",
       "0": "未处理",
       "1": "石锤",
-      "2": "嫌疑再观察",
+      "2": "待自证",
       "3": "MOSS自证",
       "4": "无效举报",
       "5": "讨论中",
@@ -53,11 +57,11 @@
       "bot": "机器人"
     },
     "tip": {
-      "notlang": "未翻译",
-      "notcontent": "无内容",
+      "notLang": "未翻译",
+      "notContent": "无内容",
       "notFound": "哎列, 访问地址似乎走失",
       "noReports": "还没有任何举报",
-      "noAccess": "当前账户, 无权限"
+      "noAccess": "当前账户,无权限"
     },
     "games": {
       "all": "所有",
@@ -75,6 +79,7 @@
       "ps4": "索尼主机4"
     },
     "button": {
+      "reply": "回复",
       "report": "举报",
       "commit": "提交",
       "save": "保存",
@@ -88,7 +93,13 @@
   },
   "captcha": {
     "get": "获得验证码",
-    "title": "验证码"
+    "title": "验证码",
+    "messages": {
+      "wrong": "验证码错误",
+      "expired": "验证码已过期",
+      "gen": "获取成功",
+      "bad": "验证码错误，请联系管理员"
+    }
   },
   "textarea": {
     "originalImage": "原始图片",
@@ -123,15 +134,21 @@
     "signup": "注册",
     "signout": "注销",
     "userCenter": "我的展示页",
-    "signoutSuccess": "注销成功"
+    "signoutSuccess": "注销成功",
+    "site_stats": "统计",
+    "announcement": "公告"
   },
   "player_list": {
-    "title": "玩家数据库"
+    "title": "玩家数据库",
+    "seo": {
+      "description": "玩家列表,这里包含用户举报玩家档案",
+      "keywords": "玩家列表,列表"
+    }
   },
   "profile": {
     "title": "个人设置",
     "meet": "欢迎回来{name}!",
-    "message": {
+    "chat": {
       "title": "消息",
       "look": "查看",
       "load": "刷新",
@@ -216,7 +233,21 @@
       "title": "皮肤"
     },
     "enhance": {
-      "title": "本地增强"
+      "title": "本地增强",
+      "public": {
+        "footerBar": {
+          "name": "底部工具栏",
+          "describe": "网站顶部附属的工具栏，为用户提供玩家持续关注等功能"
+        },
+        "autoUpdatePlayerList": {
+          "name": "未处理提醒",
+          "describe": "为管理员提供自动刷新，关注未处理玩家做出站内提醒"
+        },
+        "desktopNotifiction": {
+          "name": "桌面通知",
+          "describe": "在系统窗口内弹窗通知"
+        }
+      }
     },
     "media": {
       "title": "媒体库",
@@ -250,12 +281,21 @@
         "comment": "评论管理",
         "log": "日志",
         "adminLog": "管理日志",
-        "judgementLog": "判决日志"
+        "judgementLog": "判决日志",
+        "adminOperationLog": "管理员网站操作日志",
+        "adminOperation": "管理案件操作日志",
+        "messageManagement": "消息",
+        "messagePush": "推送",
+        "messageList": "消息内容"
       }
     }
   },
   "detail": {
     "title": "详情",
+    "seo": {
+      "description": "举报玩家详情信息",
+      "keywords": "玩家详情,玩家"
+    },
     "subscribes": {
       "tracking": "追踪",
       "trackingDescribe": "追踪此玩家，在更新动态时通知您",
@@ -264,8 +304,10 @@
     },
     "timeline": {
       "all": "所有",
+      "coreComment": "主要内容",
       "verify": "仅查看判决",
-      "banAppeal": "仅查看申诉"
+      "banAppeal": "仅查看申诉",
+      "historyName": "历史玩家变动名称"
     },
     "appeal": {
       "describe": "该举报信息存在问题,我能自证或他人协助证明清白.",
@@ -294,6 +336,7 @@
       "info": {
         "content": "申诉内容",
         "player": "玩家id",
+        "changeName": "名称变动",
         "originName": "玩家现在名称"
       },
       "placeholder": {
@@ -312,7 +355,6 @@
       "appeal": "上诉",
       "cheatersInfo": "玩家详情",
       "viewTimes": "浏览次数",
-      "reply": "回复",
       "reportedGames": "被举报的游戏",
       "gameScores": "战绩链接",
       "firstReportTime": "第一次被举报时间",
@@ -344,7 +386,7 @@
       "replyManual4": "请登录后参与回复",
       "action": "行动",
       "writeSomething": "写一些东西",
-      "giveOpinion": "你怎么看？",
+      "giveOpinion": "您怎么看?",
       "fastReplies": {
         "stats": "玩家数据异常",
         "evidencePic": "证据如图所示",
@@ -353,6 +395,7 @@
     },
     "judgement": {
       "behavior": "判决类型",
+      "game": "所属游戏",
       "methods": "作弊的方法",
       "content": "判决说明",
       "appropriateVerdict": {
@@ -370,15 +413,20 @@
     "messages": {
       "fillEverything": "请填写完整",
       "pleaseExplain": "请更加详细的描述您的裁决内容",
-      "dontDoIt": "不准",
+      "dontDoIt": "不允许",
       "replySuccess": "回复成功",
       "signIn": "请登录",
       "updateComplete": "更新完成",
-      "submitSuccess": "提交成功"
+      "submitSuccess": "提交成功",
+      "tipBind": "请绑定你的橘子账号以后在回复"
     }
   },
   "report": {
     "title": "举报",
+    "seo": {
+      "description": "玩家举报",
+      "keywords": "联ban,联办,战地风云,战地"
+    },
     "info": {
       "notFoundHintTitle": "我们无法找到该玩家",
       "notFoundHintQuestion1": "但是我刚刚在游戏里见过他/我在查战绩app上查得到他？",
@@ -386,7 +434,6 @@
       "notFoundHintQuestion2": "origin上无法搜索到，这是怎么一回事？",
       "notFoundHintAnswer2": "这可能是EA数据库更新不及时，或是EA官方的bug，我们没有办法替他们解决，如果您想出一份力，可以至       https://answers.ea.com/t5/Origin-Client-Web-Technical/bd-p/origin-technical-issues-en       官方反馈论坛反馈bug，此情况可以描述为 I can't search my friend by name on origin",
       "reportHacker": "举报作弊",
-      "reportNews": "已经支持 战地V 举报啦！",
       "idNotion1": "一次只填写一个ID，不要把战队名字写进来，不要写成自己的ID",
       "idNotion2": "游戏ID是不区分大小写的，但请特别注意区分 i I 1 l L o O 0，正确填写举报ID",
       "uploadManual1": "不想注册国内账号、嫌麻烦，上传视频可以前往",
@@ -410,13 +457,21 @@
       "game": "游戏",
       "description": "描述"
     },
-    "error": {
+    "messages": {
       "mediaEvidence": "请上传图片或填写视频链接",
-      "originId": "游戏ID不存在，请检查拼写",
-      "success": "提交成功",
+      "originIdNotExist": "游戏ID不存在，请检查拼写",
       "permissionDenied": "无权限",
-      "voideBadFormat": "格式错误",
-      "voideEmpty": "空的视频地址"
+      "videoBadFormat": "格式错误",
+      "videoEmpty": "空的视频地址",
+      "successTitle": "提交成功",
+      "successSubtitle": "感谢您的举报",
+      "failureTitle": "失败",
+      "failureSubtitle": "举报失败，{msg}",
+      "tipBind": "请绑定你的橘子账号以后在提交举报"
+    },
+    "button": {
+      "continue": "继续",
+      "leave": "离开"
     }
   },
   "footer": {
@@ -444,6 +499,10 @@
   },
   "home": {
     "title": "首页",
+    "seo": {
+      "description": "联ban官网,建立起全球作弊玩家档案库,成为我们一员维护社区环境",
+      "keywords": "联ban,联办,联办局,联ban局,战地风云,战地"
+    },
     "cover": {
       "h1": "BFBAN",
       "h2": [
@@ -502,8 +561,6 @@
   "account": {
     "title": "用户展示页",
     "reportnum": "总共举报数",
-    "hint2": "所有举报都可以 回复参与讨论",
-    "hint3": "若要补充证据，可以重复举报同一ID",
     "userInfo": "个人信息",
     "username": "用户名",
     "role": "身份",
@@ -528,7 +585,13 @@
     }
   },
   "bindOrigin": {
-    "title": "绑定Origin账户"
+    "title": "绑定Origin账户",
+    "messages": {
+      "notFound": "未找到绑定验证代码",
+      "expired": "绑定的验证代码过期，请重新提交绑定",
+      "success": "账户与橘子平台绑定成功",
+      "bad": "错误绑定，请联系管理员"
+    }
   },
   "signin": {
     "title": "登录",
@@ -551,7 +614,7 @@
       "validation": "验证中",
       "successful": "验证成功!，账户已解锁，既可前往登录",
       "failure": "错误的验证地址，请检查验证码是否正确",
-      "error": "错误"
+      "error": "验证账户错误"
     },
     "steps": {
       "0": {
@@ -587,17 +650,19 @@
     },
     "placeholder": {
       "originEmail": "输入您的橘子邮箱",
-      "originName": "输入您的橘子名字",
+      "originName": "输入您的橘子名字, 注意大小写",
       "username": "4位以上用户名 仅限英文、数字、下划线、减号",
       "password": "6位以上密码",
-      "originId": "选题"
+      "originId": "选填"
     },
-    "eaPrivacy": "请至 <a href=\"https://myaccount.ea.com/cp-ui/privacy/index\">EA 隐私设定</a> 中将允许按邮箱搜索开启",
+    "eaPrivacy": "请至 <a href='https://myaccount.ea.com/cp-ui/privacy/index'>EA 隐私设定</a> 中将允许按邮箱搜索开启",
     "checkAllEmail": "验证邮件需要一段时间(大约1分钟)才能到达您的邮箱，请等待并记得检查垃圾箱",
+    "needVerify": "请前往邮箱验证账户",
     "usernameExist": "该用户名已被注册",
     "gameNotShowed": "该邮箱下的账户不包含游戏",
     "playerNotFound": "找不到该玩家(请确认已允许按邮箱搜索)",
-    "originIdExist": "该origin账号已被绑定",
+    "originBindingExist": "该origin账号已被绑定",
+    "originNotFound": "未找到此邮箱在origin下账户",
     "fillIn": "请规范填写",
     "failed": "注册失败"
   },
@@ -630,6 +695,7 @@
   "list": {
     "title": "外挂公示",
     "filters": {
+      "sortByTitle": "排序方式",
       "sortBy": {
         "createTime": "举报时间倒序",
         "updateTime": "更新时间倒序",
@@ -760,6 +826,14 @@
     "banAppeals": "已上诉",
     "registers": "注册用户",
     "players": "现有举报案件",
-    "admins": "总共管理员数"
+    "admins": "总共管理员数",
+    "communityParticipation": "用户社区参与排行",
+    "reportRanking": "举报排行",
+    "timeRange": {
+      "daily": "昨天",
+      "weekly": "一周",
+      "monthly": "一个月",
+      "yearly": "一年"
+    }
   }
 }

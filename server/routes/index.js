@@ -102,7 +102,7 @@ router.get('/test', async (req, res, next) => {
       c: ''
     }
   }
-  res.status(200).json({success: 1, data: a['b.c']});
+  res.status(200).json({success: 2});
 })
 
 

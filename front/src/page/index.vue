@@ -42,6 +42,9 @@
                     {{ lang }}
                   </a-select-option>
                 </a-select>
+                <div style="width: 500px">
+                  <a-input @blur="searchInputBlur" />
+                </div>
               </a-col>
               <a-col>
                 <div class="switch">
@@ -91,7 +94,8 @@ export default {
 
       structure: {
         menu: []
-      }
+      },
+      searchName: ''
     }
   },
   provide() {
@@ -121,7 +125,16 @@ export default {
       }
     },
     defaultLangFilter() {
-      const { defaultLang, filterField, onlyTranslator, choose } = this
+      let { defaultLang, filterField, onlyTranslator, choose, other, searchName, lang } = this
+      if(searchName) {
+        defaultLang = defaultLang.filter(item => {
+          const { key } = item
+          return lang.some(item => {
+            const langItem = other.find(lang => lang.name == item.lang)
+            return langItem && langItem.value[key].indexOf(searchName) != -1
+          })
+        })
+      }
       if(choose && onlyTranslator) {
         return defaultLang.filter(item => filterField.includes(item.key))
       }else {
@@ -130,6 +143,9 @@ export default {
     }
   },
   methods: {
+    searchInputBlur(e) {
+      this.searchName = e.currentTarget.value
+    },
     creationStructure (_data, _lastData) {
       if (!_lastData) return;
       let array = []
