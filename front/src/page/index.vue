@@ -43,7 +43,7 @@
                   </a-select-option>
                 </a-select>
                 <div style="width: 500px">
-                  <a-input @blur="searchInputBlur" />
+                  <a-input @blur="searchInputBlur" :value="searchName" placeholder="search the text you wanan find" />
                 </div>
               </a-col>
               <a-col>
